@@ -1,0 +1,220 @@
+@font-face {
+  font-family: start2p;
+  src: url('/assets/fonts/PressStart2P-Regular.ttf');
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  display: grid;
+  justify-content: center;
+  height: 1046.65vh;
+  width: 100%;
+  background-image: url('/assets/images/Midnight_Tree.png');
+  background-size: contain;
+  background-position: top center;
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+}
+
+section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  position: relative;
+}
+
+p {
+  color: #ff8274;
+  text-align: center;
+  font-size: 2vw;
+  position: relative;
+  top: 15%;
+  left: 40%;
+}
+
+h1 {
+  font-family: start2p;
+  color: white;
+  user-select: none;
+  text-align: center;
+  font-size: 6vw;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  animation: bobbing 2s ease-in-out infinite;
+}
+
+h2 {
+  font-family: start2p;
+  color: #ff8274;
+  user-select: none;
+  font-size: 4vw;
+  top: 80%;
+  left: -35%;
+  position: absolute;
+  text-align: center;
+}
+
+img {
+  position: absolute;
+  top: 500%;
+  left: 50%;
+}
+
+.ycenter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  padding: 2rem;
+  position: absolute;
+  top: 761%;
+  left: 38%;
+}
+
+.slider-wrapper {
+  position: relative;
+  max-width: 45rem;
+  margin: 0 auto;
+}
+
+.slider {
+  display: flex;
+  aspect-ratio: 16/9;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  border-radius: 0.5rem;
+}
+
+.slider img {
+  flex: 1 0 100%;
+  scroll-snap-align: start;
+  object-fit: cover;
+}
+
+.slider-nav {
+  display: flex;
+  column-gap: 1rem;
+  position: absolute;
+  bottom: -35rem;
+  left: 16rem;
+  transform: translateX(-50%);
+  z-index: 1;
+}
+
+.slider-nav a {
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: 50%;
+  background-color: white;
+  opacity: 75%;
+  transition: opacity ease 250ms;
+}
+
+.slider-nav a:hover {
+  opacity: 1;
+}
+
+.gmailbutton {
+  background-image: url('/assets/images/Gmail.png');
+  background-size: contain;
+  display: inline-flex;
+  border: 0;
+  background-color: transparent;
+  cursor: pointer;
+  justify-content: center;
+  align-items: center;
+  width: 100px;
+  height: 75px;
+  position: absolute;
+  top: 220%;
+  left: 8%;
+}
+
+.linkedinbutton {
+  background-image: url('/assets/images/linkedin.webp');
+  background-size: contain;
+  display: inline-flex;
+  border: 0;
+  background-color: transparent;
+  cursor: pointer;
+  justify-content: center;
+  align-items: center;
+  width: 122.5px;
+  height: 122.5px;
+  position: absolute;
+  top: 217.5%;
+  left: 22%;
+}
+
+.resumebutton {
+  background-image: url('/assets/images/resume.png');
+  background-size: contain;
+  display: inline-flex;
+  border: 0;
+  background-color: transparent;
+  cursor: pointer;
+  justify-content: center;
+  align-items: center;
+  width: 149.75px;
+  height: 315px;
+  position: absolute;
+  top: 120%;
+  left: 74%;
+}
+
+.navbar {
+  overflow: hidden;
+  background-color: #333;
+  position: fixed;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 0;
+  width: 70px;
+  border-radius: 10px 0 0 10px;
+  padding: 10px;
+  z-index: 2;
+}
+
+.navbar a {
+  float: right;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 10px 12px;
+  text-decoration: none;
+  border-radius: 5px;
+}
+
+.navbar a:hover {
+  background: #ddd;
+  color: black;
+}
+
+@keyframes bobbing {
+  0% {
+    transform: translate(-50%, -50%);
+  }
+
+  50% {
+    transform: translate(-50%, calc(-50% - 40px));
+  }
+
+  100% {
+    transform: translate(-50%, -50%);
+  }
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
