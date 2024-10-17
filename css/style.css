@@ -1,6 +1,6 @@
 @font-face {
   font-family: start2p;
-  src: url('Website//assets/fonts/PressStart2P-Regular.ttf');
+  src: url('assets/fonts/PressStart2P-Regular.ttf');
 }
 
 html {
@@ -14,7 +14,7 @@ body {
   justify-content: center;
   height: 1046.65vh;
   width: 100%;
-  background-image: url('Website/assets/images/Midnight_Tree.png');
+  background-image: url('assets/images/Midnight_Tree.png');
   background-size: contain;
   background-position: top center;
   background-repeat: no-repeat;
@@ -126,7 +126,7 @@ img {
 }
 
 .gmailbutton {
-  background-image: url('Website/assets/images/Gmail.png');
+  background-image: url('assets/images/Gmail.png');
   background-size: contain;
   display: inline-flex;
   border: 0;
@@ -142,7 +142,7 @@ img {
 }
 
 .linkedinbutton {
-  background-image: url('Website/assets/images/linkedin.webp');
+  background-image: url('assets/images/linkedin.webp');
   background-size: contain;
   display: inline-flex;
   border: 0;
@@ -158,7 +158,7 @@ img {
 }
 
 .resumebutton {
-  background-image: url('Website/assets/images/resume.png');
+  background-image: url('assets/images/resume.png');
   background-size: contain;
   display: inline-flex;
   border: 0;
