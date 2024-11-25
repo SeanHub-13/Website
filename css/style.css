@@ -1,26 +1,30 @@
+/* Adding my imported font */
 @font-face {
   font-family: start2p;
   src: url('../assets/fonts/PressStart2P-Regular.ttf');
 }
 
+/* Makes the scrolling on the page smooth */
 html {
   scroll-behavior: smooth;
 }
 
+/* Changes attributes about the body of the page, adds the background image (bane of my existence) */
 body {
   padding: 0;
   margin: 0;
   display: grid;
   justify-content: center;
-  height: 1046.65vh;
+  height: 1186.65vh;
   width: 100%;
   background-image: url('../assets/images/Midnight_Tree.png');
-  background-size: contain;
+  background-size: cover;
   background-position: top center;
   background-repeat: no-repeat;
   background-attachment: scroll;
 }
 
+/* Changes attributes of the section tag, which holds and seperates a lot of elements in my html code */
 section {
   display: flex;
   flex-direction: column;
@@ -28,15 +32,18 @@ section {
   align-items: center;
   height: 100vh;
   position: relative;
+  width: 100%;
 }
 
 p {
-  color: #ff8274;
+  color: #ffb38b;
   text-align: center;
-  font-size: 2vw;
+  /* This way of defining sizes was one of the things I tried to do in order to make elements scale yet stay centered. */
+  font-size: min(2vw, 4vh);
   position: relative;
-  top: 15%;
-  left: 40%;
+  top: 20%;
+  left: 75%;
+  transform: translateX(-50%);
 }
 
 h1 {
@@ -44,77 +51,124 @@ h1 {
   color: white;
   user-select: none;
   text-align: center;
-  font-size: 6vw;
+  font-size: min(6vw, 10vh);
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  /* h1 is used for the "Scroll Down" text. so it has a bobbing animation embedded into it */
   animation: bobbing 2s ease-in-out infinite;
+  white-space: nowrap;
 }
 
 h2 {
   font-family: start2p;
-  color: #ff8274;
+  color: #ffb38b;
   user-select: none;
-  font-size: 4vw;
-  top: 80%;
-  left: -35%;
+  font-size: min(4vw, 8vh);
   position: absolute;
+  top: 87%;
+  left: 15%;
+  transform: translateX(-50%);
   text-align: center;
+  white-space: nowrap;
 }
 
-img {
+/* Tag for the image of me, nothing special really */
+.portrait {
   position: absolute;
-  top: 500%;
-  left: 50%;
+  top: 575%;
+  left: 65%;
+  transform: translateX(-50%);
+  max-width: 90vw;
+  max-height: 90vh;
 }
 
+/* Meant to vertically center things */
 .ycenter {
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
+/* Contains. (Mostly for the slide deck) */
 .container {
   padding: 2rem;
   position: absolute;
   top: 761%;
   left: 38%;
+  width: min(45rem, 90%);
 }
 
+/* Anything to do with .slider is for the slide deck */
 .slider-wrapper {
   position: relative;
-  max-width: 45rem;
+  max-width: 90%;
   margin: 0 auto;
+  top: 131%;
+  left: -12%;
+  z-index: 1;
 }
 
+/* The famed and well known .slider himself */
+/* The slider stuff (except for the hovering text) was done through a youtube tutorial */
 .slider {
   display: flex;
   aspect-ratio: 16/9;
   overflow-x: auto;
   scroll-snap-type: x mandatory;
   border-radius: 0.5rem;
+  width: 100%;
+}
+
+/* This hidden text stuff is all to create the text effect that happens when you hover over the slide deck */
+.slider .hidden-text {
+  display: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  font-size: min(2vw, 4vh);
+  background-color: rgba(0, 0, 0, 0.7);
+  padding: 1rem;
+  border-radius: 10px;
+  text-align: center;
+  z-index: 2;
+}
+
+/* On hover, display the hidden text */
+.slider:hover .hidden-text {
+  display: block;
+  opacity: 1;
+}
+
+/* Don't display it */
+.slider .hidden-text {
+  opacity: 0;
+  transition: opacity 0.3s ease;
 }
 
 .slider img {
   flex: 1 0 100%;
   scroll-snap-align: start;
   object-fit: cover;
+  position: relative;
 }
 
 .slider-nav {
   display: flex;
   column-gap: 1rem;
   position: absolute;
-  bottom: -35rem;
-  left: 16rem;
+  bottom: -10%;
+  left: 50%;
   transform: translateX(-50%);
   z-index: 1;
 }
 
 .slider-nav a {
-  width: 0.5rem;
-  height: 0.5rem;
+  width: 1vw;
+  height: 1vw;
   border-radius: 50%;
   background-color: white;
   opacity: 75%;
@@ -125,94 +179,103 @@ img {
   opacity: 1;
 }
 
-.gmailbutton {
-  background-image: url('../assets/images/Gmail.png');
-  background-size: contain;
+/* I realized that all of these had many things in common so I bunched them all here */
+.gmailbutton,
+.linkedinbutton,
+.resumebutton {
   display: inline-flex;
   border: 0;
   background-color: transparent;
   cursor: pointer;
   justify-content: center;
   align-items: center;
-  width: 100px;
-  height: 75px;
+  background-size: contain;
+}
+
+.gmailbutton {
+  background-image: url('../assets/images/Gmail.png');
+  width: min(10vw, 100px);
+  height: min(7.5vw, 75px);
   position: absolute;
-  top: 220%;
-  left: 8%;
+  top: 252%;
+  left: 10%;
 }
 
 .linkedinbutton {
   background-image: url('../assets/images/linkedin.webp');
-  background-size: contain;
-  display: inline-flex;
-  border: 0;
-  background-color: transparent;
-  cursor: pointer;
-  justify-content: center;
-  align-items: center;
-  width: 122.5px;
-  height: 122.5px;
+  width: min(12vw, 122.5px);
+  height: min(12vw, 122.5px);
   position: absolute;
-  top: 217.5%;
-  left: 22%;
+  top: 249%;
+  left: 23%;
 }
 
 .resumebutton {
   background-image: url('../assets/images/resume.png');
-  background-size: contain;
-  display: inline-flex;
-  border: 0;
-  background-color: transparent;
-  cursor: pointer;
-  justify-content: center;
-  align-items: center;
-  width: 149.75px;
-  height: 315px;
+  width: min(30vw, 300px);
+  height: min(50vw, 500px);
   position: absolute;
-  top: 120%;
-  left: 74%;
+  top: 130%;
+  left: 73%;
+  transform: translateX(-50%);
 }
 
+/* The navbar, one of the easier yet more pleasant things to make */
 .navbar {
-  overflow: hidden;
-  background-color: #333;
+  background-color: #ff87ad;
   position: fixed;
   top: 50%;
   transform: translateY(-50%);
   right: 0;
-  width: 70px;
+  width: min(9vw, 90px);
   border-radius: 10px 0 0 10px;
-  padding: 10px;
+  padding: 8px;
   z-index: 2;
 }
 
+/* THe buttons */
 .navbar a {
-  float: right;
+  float: center;
   display: block;
-  color: #f2f2f2;
-  text-align: center;
-  padding: 10px 12px;
+  width: calc(100% - 20px);
+  padding: 10px;
+  color: white;
+  text-align: left;
+  padding: 1vw;
+  font-family: start2p;
+  font-size: min(0.8vw, 10px);
   text-decoration: none;
   border-radius: 5px;
 }
 
+/* The buttons, upon mouse hover */
 .navbar a:hover {
-  background: #ddd;
-  color: black;
+  background: #cd6cad;
+  color: #f2f2f2;
 }
 
+/* Bobbing animation */
 @keyframes bobbing {
-  0% {
+
+  0%,
+  100% {
     transform: translate(-50%, -50%);
   }
 
   50% {
-    transform: translate(-50%, calc(-50% - 40px));
+    transform: translate(-50%, calc(-50% - 5vh));
   }
+}
 
-  100% {
-    transform: translate(-50%, -50%);
-  }
+/* Kinda prep tag for the fading in animation */
+.fade-in {
+  opacity: 0;
+  transition: opacity 1.5s ease-in-out;
+}
+
+/* This is the one that actually makes it visible */
+.fade-in.visible {
+  opacity: 1;
 }
 
 ::-webkit-scrollbar {

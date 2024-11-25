@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 
+<!-- Head of the page, holds tab title and links to stylesheet and script-->
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
@@ -9,9 +11,11 @@
   <script src="js/script.js"></script>
 </head>
 
+<!-- Body, contains most everything one can see -->
+
 <body>
   <section class="ycenter">
-    <h1>Scroll<br>Down</h1>
+    <h1 class="fade-in">Scroll<br>Down</h1>
   </section>
   <div class="navbar">
     <a href="#about">About</a>
@@ -20,20 +24,27 @@
     <a href="#contact">Contact</a>
   </div>
   <section class="ycenter">
-    <h2>Welcome.</h2>
+    <h2 class="fade-in">Welcome.</h2>
   </section>
-  <img src='assets/images/image.png' id="about" alt="Sean!" width="677" height="677">
+  <div class="portrait">
+    <img class="fade-in" src='assets/images/image.png' id="about" alt="Sean!" width="677" height="677">
+  </div>
   <section class="ycenter">
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. <br> Nullam ut mauris porttitor, laoreet lacus a, tempor
-      metus.</p>
+    <p class="fade-in">Hello! My name is Sean Verba, a student majoring in <br> Computation Arts at Concordia
+      University.
+      Below you can find some <br> examples of my projects, my cover letter, and some contact info.</p>
   </section>
   <section class="container">
     <div class="slider-wrapper">
       <div id="projects" class="slider">
+        <div class="hidden-text">
+        </div>
+        <!-- Links the slide images and gives them id's that can be referred to -->
         <img id="slide-1" src='assets/images/sean_grids_2.png' alt="1">
         <img id="slide-2" src='assets/images/sean_grids_3.png' alt="2">
         <img id="slide-3" src='assets/images/sean_grids_4.png' alt="3">
       </div>
+      <!-- This part might look similar but its for the navigation bar beneath the main slides-->
       <div class="slider-nav">
         <a href="#slide-1"></a>
         <a href="#slide-2"></a>
